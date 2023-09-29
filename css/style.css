@@ -24,6 +24,8 @@ main h2 {
     text-align: center
 }
 
+
+
 .listado {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -40,13 +42,41 @@ main h2 {
     background-color:black;
     text-align: center;
     cursor: pointer;
+    font-size: 30px;
+    position: absolute;
+    bottom: 10px; 
+    right: 10px;
 } 
 
-.image {
-    width: 100%; /* Para ajustar el ancho de las imágenes al tamaño de las columnas */
-    height: auto; /* Para mantener la proporción de aspecto */
-  }
 
   footer {
     color: lightblue;
   }
+
+  .imagen1 {
+    display: flex;
+    border-radius: 1rem;
+    width: 15em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.precio {
+    color: black;
+    text-align: center;
+    font-size: 25px;
+}
+
+.descripcion {
+color: red;
+text-align: center;
+}
+
+.nombre {
+    color: red;
+    text-align: center;
+    text-decoration: underline;
+    font-size: 50px;
+}

@@ -1,24 +1,25 @@
 const destacado = JSON.parse(localStorage.getItem("producto"));
 
-const mostrarProducto = document.querySelector("#producto");
+const detalleProducto = document.querySelector("#producto");
  
 destacado.forEach((product) => {
     let content = document.createElement("div");
-    content.className = "card2";
+    content.className = "eleccion";
     content.innerHTML = `
-        <div>
-            <h3 class="name">${product.nombre}</h3> </div>
-        <div class="image-descripcion">
-            <img class="image" src="${product.image}">
-            <p class="descriptionLarge">${product.descripcion}</p>
-        </div>
-        <div>
-            <p class="price-product">$ ${product.precio}</p>
-        </div>
-     
+    <div>
+    <h3 class="nombre">${product.nombre}</h3> </div>
+<div class="imagenes">
+    <img class="imagen1" src="${product.imagen}">
+    <p class="descripcion">${product.descripcion}</p>
+</div>
+<div>
+    <p class="precio">$ ${product.precio}</p>
+</div>
+<div>
+
     `;
 
-    mostrarProducto.append(content);
+    detalleProducto.append(content);
 });
 
-localStorage.removeItem(productoElegido);
+localStorage.removeItem(info);

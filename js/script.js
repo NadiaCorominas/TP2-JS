@@ -7,11 +7,10 @@ fetch("productos.json").then((response) => response.json()).then((json) => {
 
   const jsonProductos = JSON.parse(localStorage.getItem("productos"));
 
-  const listaDeProductos = document.querySelector("#listado");
-
+  const tiendaProductos = document.querySelector("#listado");
 
   
-  const productoElegido = [];
+  const info = [];
 
   jsonProductos.forEach((product) => {
     let content = document.createElement("div");
@@ -21,15 +20,15 @@ fetch("productos.json").then((response) => response.json()).then((json) => {
         <img class="imagen" src="${product.image}">
     `;
 
-    listaDeProductos.append(content);
+    tiendaProductos.append(content);
 
-    let ver = document.createElement("button");
-    ver.innerText = "+ Info";
-    content.append(ver);
-    ver.className = "+ Info";
+    let detalle = document.createElement("button");
+    detalle.innerText = "+ Info";
+    content.append(detalle);
+    detalle.className = "+ Info";
 
-    ver.addEventListener("click", () => {
-      productoElegido.push({
+    detalle.addEventListener("click", () => {
+      info.push({
         id: product.id,
         nombre: product.nombre,
         imagen: product.image,
@@ -37,9 +36,9 @@ fetch("productos.json").then((response) => response.json()).then((json) => {
           precio: product.precio,
       });
 
-      localStorage.setItem("producto", JSON.stringify(productoElegido));
+      localStorage.setItem("producto", JSON.stringify(info));
 
-      console.log(productoElegido)
+      console.log(info)
 
       location.href ="detalles.html";
 
