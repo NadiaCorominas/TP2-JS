@@ -2,4 +2,51 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Mooli', sans-serif;
+    background-image: url("../images/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.imagen {
+    display: flex;
+    border-radius: 1rem;
+    width: 15em;
+}
+
+
+main h2 {
+    color: grey;
+    text-align: center
+}
+
+.listado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, auto); 
+    gap: 10px; /
+    
+}
+
+.volver {
+    display: flex;
+    justify-content: center;
+    border-radius: 1rem;
+    color: red;
+    background-color:black;
+    text-align: center;
+    cursor: pointer;
+} 
+
+.image {
+    width: 100%; /* Para ajustar el ancho de las imágenes al tamaño de las columnas */
+    height: auto; /* Para mantener la proporción de aspecto */
+  }
+
+  footer {
+    color: lightblue;
+  }
