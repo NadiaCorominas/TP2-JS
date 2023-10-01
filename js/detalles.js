@@ -1,15 +1,5 @@
-// const destacado = JSON.parse(localStorage.getItem("producto"));
 
 const destacado = JSON.parse(localStorage.getItem("producto"));
-
-if (destacado) {
-    destacado.forEach((product) => {
-    });
-} else {
- 
-  console.error("Producto no encontrado en localStorage");
-}
-
 const detalleProducto = document.querySelector("#producto");
 
 function crearEstrellas(puntuacion) {
@@ -21,37 +11,37 @@ function crearEstrellas(puntuacion) {
     if (i <= puntuacion) {
       estrella.className = 'fas fa-star'; 
     } else {
-      estrella.className = 'far fa-star';
+      estrella.className = 'far fa-star'; 
     }
     estrellasContainer.appendChild(estrella);
   }
 
   return estrellasContainer;
 }
- 
+
 destacado.forEach((product) => {
-    let content = document.createElement("div");
-    content.className = "eleccion";
-    content.innerHTML = `
+  let content = document.createElement("div");
+  content.className = "eleccion";
+  content.innerHTML = `
     <div>
-    <h3 class="nombre">${product.nombre}</h3> </div>
-<div class="imagenes">
-    <img class="imagen1" src="${product.imagen}">
-    <p class="descripcion">${product.descripcion}</p>
-</div>
-<div>
-    <p class="precios">$ ${product.precio}</p>
-</div>
-<div>
+      <h3 class="nombre">${product.nombre}</h3>
+    </div>
+    <div class="imagenes">
+      <img class="imagen1" src="${product.imagen}">
+      <p class="descripcion">${product.descripcion}</p>
+    </div>
+    <div>
+      <p class="precios">$ ${product.precio}</p>
+    </div>
+  `;
 
-    `;
-    const puntuacion = product.puntuacion; // Valor numérico de puntuación
-    const estrellas = crearEstrellas(puntuacion);
-  
-    content.appendChild(estrellas);
-    detalleProducto.append(content);
+  const puntuacion = product.puntuacion; 
+  const estrellas = crearEstrellas(puntuacion);
+
+  content.appendChild(estrellas);
+
+  detalleProducto.append(content);
 });
-  
-localStorage.removeItem(info);
 
+localStorage.removeItem("producto");
 
