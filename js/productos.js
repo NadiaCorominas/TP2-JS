@@ -26,3 +26,4 @@ destacado.forEach((product) => {
 });
 
 localStorage.removeItem(info);
+
