@@ -3,12 +3,10 @@
 const destacado = JSON.parse(localStorage.getItem("producto"));
 
 if (destacado) {
-  // Itera sobre destacado solo si no es null
-  destacado.forEach((product) => {
-    // ... tu código para mostrar los detalles del producto
-  });
+    destacado.forEach((product) => {
+    });
 } else {
-  // Maneja el caso en el que no se encuentre el producto
+ 
   console.error("Producto no encontrado en localStorage");
 }
 
