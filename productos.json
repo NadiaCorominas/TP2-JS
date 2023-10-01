@@ -11,7 +11,7 @@
     "id": "2",
     "nombre": "Buzos",
     "descripcion": "Buzos personalizados con tus personajes favoritos ",
-    "image": "buzo.jpg",
+    "image": "images/buzo.jpg",
     "precio": 8000,
     "puntuacion": "*****"
   },
