@@ -13,7 +13,10 @@ destacado.forEach((product) => {
     <p class="descripcion">${product.descripcion}</p>
 </div>
 <div>
-    <p class="precio">$ ${product.precio}</p>
+    <p class="precios">$ ${product.precio}</p>
+</div>
+<div>
+    <p class="puntuacion">$ ${product.puntuacion}</p>
 </div>
 <div>
 

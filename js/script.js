@@ -1,21 +1,41 @@
-fetch("productos.json").then((response) => response.json()).then((json) => {
-    // console.log(json);
-    json.forEach((producto) => console.log(producto?.nombre));
 
-    localStorage.setItem("productos", JSON.stringify(json));
-  });
+const listado = document.querySelector("#listado");
+let product;
+
+ const productos = async () => {
+
+  //localStorage.clear();
+  
+  listado.innerHTML = "";
+
+product = localStorage.getItem("product");
+
+if (product == null) {
+
+const response = await fetch ("productos.json");
+product = await response.json();
+
+localStorage.setItem("product", JSON.stringify(product));
+
+}
+if (typeof product == "string") {
+  product = JSON.parse(product);
+};
+
+};
+
+productos ();
+
 
   const jsonProductos = JSON.parse(localStorage.getItem("productos"));
 
   const tiendaProductos = document.querySelector("#listado");
 
-  
   const info = [];
 
   jsonProductos.forEach((product) => {
     let content = document.createElement("div");
-    content.className = "card";
-    content.innerHTML = `
+       content.innerHTML = `
         <h3>${product.nombre}</h3>
         <img class="imagen" src="${product.image}">
     `;
@@ -25,7 +45,7 @@ fetch("productos.json").then((response) => response.json()).then((json) => {
     let detalle = document.createElement("button");
     detalle.innerText = "+ Info";
     content.append(detalle);
-    detalle.className = "+ Info";
+    detalle.className = "info";
 
     detalle.addEventListener("click", () => {
       info.push({
@@ -34,13 +54,12 @@ fetch("productos.json").then((response) => response.json()).then((json) => {
         imagen: product.image,
         descripcion: product.descripcion,
           precio: product.precio,
+          puntuacion: product.puntuacion,
       });
 
       localStorage.setItem("producto", JSON.stringify(info));
 
-      console.log(info)
-
-      location.href ="detalles.html";
+      window.location ="detalles.html";
 
     });
 

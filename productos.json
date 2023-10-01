@@ -3,7 +3,8 @@
     "nombre": "Remeras",
     "descripcion": "Remera de modal, algodon, con DTF o SUBLIMADA. Variedad de colores y talles ",
     "image": "images/disfraz.jpg",
-    "precio": 3000
+    "precio": 3000,
+    "puntuacion": "****"
   },
 
   {
@@ -11,7 +12,8 @@
     "nombre": "Buzos",
     "descripcion": "Buzos personalizados con tus personajes favoritos ",
     "image": "images/buzo.jpg",
-    "precio": 8000
+    "precio": 8000,
+    "puntuacion": "*****"
   },
 
   {
@@ -19,7 +21,8 @@
     "nombre": "Camisetas",
     "descripcion": " Camisetas para todo deporte, totalmente personalizables con número, nombre y escudo ",
     "image": "images/camiseta.jpg",
-    "precio": 5000
+    "precio": 5000,
+    "puntuacion": "*****"
   },
 
   {
@@ -27,7 +30,8 @@
     "nombre": "Tazas",
     "descripcion": "Tazas de ceramica, plástico, con glitter o mágicas",
     "image": "images/tazas.jpg",
-    "precio": 3000
+    "precio": 3000,
+  "puntuacion": "*****"
   },
 
   {
@@ -35,7 +39,8 @@
     "nombre": "Mousepad",
     "descripcion": "Mousepads redondos o cuadrados con la imagen que vos elijas ",
     "image": "images/mousepad.jpg",
-    "precio": 2000
+    "precio": 2000,
+    "puntuacion": "****"
   },
   
   {
@@ -44,5 +49,7 @@
     "descripcion": "Botellas deportivas con sticker personalizado ",
     "image": "images/botellas.jpg",
     "precio": 2000
+    ,
+    "puntuacion": "****"
   }
 ]
