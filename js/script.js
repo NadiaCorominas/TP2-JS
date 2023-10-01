@@ -23,7 +23,7 @@ if (typeof product == "string") {
 };
 
 productos().then(() => {
-  jsonProductos.forEach(product);
+  product.forEach(jsonProductos);
 });
 
 
