@@ -1,7 +1,3 @@
-
-const destacado = JSON.parse(localStorage.getItem("producto"));
-const detalleProducto = document.querySelector("#producto");
-
 function crearEstrellas(puntuacion) {
   const estrellasContainer = document.createElement('div');
   estrellasContainer.className = 'estrellas';
@@ -9,9 +5,9 @@ function crearEstrellas(puntuacion) {
   for (let i = 1; i <= 5; i++) {
     const estrella = document.createElement('i');
     if (i <= puntuacion) {
-      estrella.className = 'fas fa-star'; 
+      estrella.className = 'fas fa-star'; // Ícono de estrella llena
     } else {
-      estrella.className = 'far fa-star'; 
+      estrella.className = 'far fa-star'; // Ícono de estrella vacía
     }
     estrellasContainer.appendChild(estrella);
   }
@@ -19,29 +15,41 @@ function crearEstrellas(puntuacion) {
   return estrellasContainer;
 }
 
-destacado.forEach((product) => {
-  let content = document.createElement("div");
-  content.className = "eleccion";
-  content.innerHTML = `
-    <div>
-      <h3 class="nombre">${product.nombre}</h3>
-    </div>
-    <div class="imagenes">
-      <img class="imagen1" src="${product.imagen}">
-      <p class="descripcion">${product.descripcion}</p>
-    </div>
-    <div>
-      <p class="precios">$ ${product.precio}</p>
-    </div>
-  `;
+document.addEventListener("DOMContentLoaded", () => {
+  const detalleProducto = document.getElementById('producto');
+  const productoSeleccionado = JSON.parse(localStorage.getItem('productoSeleccionado'));
 
-  const puntuacion = product.puntuacion; 
-  const estrellas = crearEstrellas(puntuacion);
+  if (productoSeleccionado) {
+    const imagen = document.createElement('img');
+    imagen.src = productoSeleccionado.image;
+    imagen.alt = productoSeleccionado.nombre;
+    imagen.className = "imagen1";
 
-  content.appendChild(estrellas);
+    const nombre = document.createElement('h2');
+    nombre.textContent = productoSeleccionado.nombre;
+    nombre.className = "nombre";
 
-  detalleProducto.append(content);
+    const descripcion = document.createElement('p');
+    descripcion.textContent = productoSeleccionado.descripcion;
+    descripcion.className = "descripcion";
+
+    const precio = document.createElement('p');
+    precio.textContent = `Precio: $${productoSeleccionado.precio}`;
+    precio.className = "precios";
+
+    const puntuacion = productoSeleccionado.puntuacion; // Valor numérico de puntuación
+    const estrellas = crearEstrellas(puntuacion); // Convierte la puntuación en estrellas
+
+    detalleProducto.appendChild(imagen);
+    detalleProducto.appendChild(nombre);
+    detalleProducto.appendChild(descripcion);
+    detalleProducto.appendChild(precio);
+    detalleProducto.appendChild(estrellas); // Agrega las estrellas
+  } else {
+    const mensajeError = document.createElement('p');
+    mensajeError.textContent = 'Producto no encontrado';
+    detalleProducto.appendChild(mensajeError);
+  }
+
+  localStorage.removeItem('productoSeleccionado');
 });
-
-localStorage.removeItem("producto");
-
