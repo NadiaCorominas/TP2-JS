@@ -1,12 +1,10 @@
 
-const listado = document.querySelector("#listado");
 let product;
 
  const productos = async () => {
 
   //localStorage.clear();
   
-  listado.innerHTML = "";
 
 product = localStorage.getItem("product");
 
@@ -25,7 +23,6 @@ if (typeof product == "string") {
 };
 
 productos ();
-
 
   const jsonProductos = JSON.parse(localStorage.getItem("productos"));
 
