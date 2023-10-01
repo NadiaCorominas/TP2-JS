@@ -19,12 +19,13 @@ localStorage.setItem("product", JSON.stringify(product));
 if (typeof product == "string") {
   product = JSON.parse(product);
 };
+product.forEach(jsonProductos);
 
 };
 
-productos().then(() => {
-  product.forEach(jsonProductos);
-});
+productos();
+  
+
 
 
   const jsonProductos = JSON.parse(localStorage.getItem("productos"));
