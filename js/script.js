@@ -22,7 +22,10 @@ if (typeof product == "string") {
 
 };
 
-productos ();
+productos().then(() => {
+  jsonProductos.forEach(product);
+});
+
 
   const jsonProductos = JSON.parse(localStorage.getItem("productos"));
 
